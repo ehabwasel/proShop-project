@@ -26,11 +26,11 @@ const userSchema = mongoose.Schema(
     timestamps: true,
   }
 );
-
+// compaire the password enterd in login page 
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
-
+// to crypt password before add
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     next();
