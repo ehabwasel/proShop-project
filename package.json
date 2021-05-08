@@ -1,37 +1,31 @@
 {
-  "name": "proShope",
+  "name": "proshop",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "MERN shopping cart app",
+  "main": "server.js",
   "type": "module",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "author": "Ehab Wasel",
+  "license": "MIT",
   "dependencies": {
-    "D": "^1.0.0",
     "bcryptjs": "^2.4.3",
-    "bootstrap": "^4.6.0",
     "colors": "^1.4.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
-    "kill-port": "^1.6.1",
-    "mongoose": "^5.12.5",
-    "react-bootstrap": "^1.5.2",
-    "react-paypal-button-v2": "^2.6.3",
-    "redux-devtools-extension": "^2.13.9"
+    "mongoose": "^5.10.6",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2"
   },
   "devDependencies": {
-    "concurrently": "^6.0.2",
-    "nodemon": "^2.0.7"
-  },
-  "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server",
-    "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d"
-  },
-  "keywords": [],
-  "author": "Ehab",
-  "license": "ISC"
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
 }

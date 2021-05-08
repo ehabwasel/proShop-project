@@ -37,9 +37,9 @@ const addOrderItems = asyncHandler(async (req, res) => {
   }
 })
 
-//desc    Get order by ID
-//route   GET /api/orders/:id
-//access  Private
+// @desc    Get order by ID
+// @route   GET /api/orders/:id
+// @access  Private
 const getOrderById = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id).populate(
     'user',
@@ -54,9 +54,9 @@ const getOrderById = asyncHandler(async (req, res) => {
   }
 })
 
-// // @desc    Update order to paid
-// // @route   GET /api/orders/:id/pay
-// // @access  Private
+// @desc    Update order to paid
+// @route   GET /api/orders/:id/pay
+// @access  Private
 const updateOrderToPaid = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id)
 
@@ -117,8 +117,8 @@ const getOrders = asyncHandler(async (req, res) => {
 export {
   addOrderItems,
   getOrderById,
-   updateOrderToPaid,
-   updateOrderToDelivered,
-   getMyOrders,
-   getOrders,
+  updateOrderToPaid,
+  updateOrderToDelivered,
+  getMyOrders,
+  getOrders,
 }
